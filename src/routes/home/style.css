@@ -10,12 +10,26 @@
   align-items: center;
 }
 .titleText {
-  font-size: 3.5rem;
+  font-size: 55px;
+  animation: textDelayedFadeIn 1.5s ease-in;
+}
+
+.titleTextExiting {
+  font-size: 55px;
+  animation: fadeOutRight 1.05s ease-out;
+  opacity: 0;
 }
 
 .subtitleText {
   padding-top: 10px;
   font-size: 16px;
+  animation: flyInBottom 1.8s ease-out;
+}
+.subtitleTextExiting {
+  padding-top: 10px;
+  font-size: 16px;
+  animation: fadeOutQuick 1s ease-out;
+  opacity: 0;
 }
 
 .mainContainer {
@@ -31,4 +45,109 @@
   border: 1px solid rgba(0, 0, 0, 0.5);
   width: 105%;
   margin-top: -10px;
+  animation: dividerOpen 1s ease-out;
+}
+.dividerExiting {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  width: 105%;
+  margin-top: -10px;
+  animation: fadeOutQuick 1s ease-out;
+  opacity: 0;
+}
+.learnMoreButton {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  padding: 10px;
+  font-size: 1.2rem;
+  background-color: rgba(255, 255, 255, 0.35);
+  margin-top: 50px;
+  backdrop-filter: blur(5px);
+  animation: buttonFadeIn 3s ease-out;
+  box-shadow: 1px 1px 5px 1px;
+  cursor: pointer;
+}
+.learnMoreButtonExiting {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  padding: 10px;
+  font-size: 1.2rem;
+  background-color: rgba(255, 255, 255, 0.35);
+  margin-top: 50px;
+  backdrop-filter: blur(5px);
+  animation: fadeOutQuick 1s ease-out;
+  box-shadow: 1px 1px 5px 1px;
+  cursor: pointer;
+  opacity: 0;
+}
+.learnMoreButton:hover {
+  box-shadow: 1px 1px 10px 1px;
+}
+
+@keyframes dividerOpen {
+  0% {
+    width: 0%;
+    opacity: 0;
+  }
+  100% {
+    width: 105%;
+    opacity: 1;
+  }
+}
+@keyframes textDelayedFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes buttonFadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeOutQuick {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes flyInBottom {
+  0% {
+    transform: translateY(1000px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fadeOutRight {
+  0% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(300px);
+    opacity: 0;
+  }
 }
